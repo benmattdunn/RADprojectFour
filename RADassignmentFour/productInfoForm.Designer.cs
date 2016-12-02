@@ -73,11 +73,11 @@
             this.buttonInstructionLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ProductIDLabel = new System.Windows.Forms.Label();
-            this.Condition = new System.Windows.Forms.Label();
+            this.Conditionlabel = new System.Windows.Forms.Label();
             this.CostLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.ProductIDTextBox = new System.Windows.Forms.TextBox();
+            this.ConditionTextBox = new System.Windows.Forms.TextBox();
+            this.CostTextBox = new System.Windows.Forms.TextBox();
             this.ProductInfoMenuBar.SuspendLayout();
             this.MainTableLayoutPanel.SuspendLayout();
             this.ProductInfoGroupBox.SuspendLayout();
@@ -114,12 +114,14 @@
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -544,7 +546,7 @@
             this.buttonInstructionLabel.Location = new System.Drawing.Point(3, 0);
             this.buttonInstructionLabel.Name = "buttonInstructionLabel";
             this.buttonInstructionLabel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.buttonInstructionLabel.Size = new System.Drawing.Size(273, 21);
+            this.buttonInstructionLabel.Size = new System.Drawing.Size(261, 21);
             this.buttonInstructionLabel.TabIndex = 1;
             this.buttonInstructionLabel.Text = "Click Next To Confirm Your Selection";
             // 
@@ -558,11 +560,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.ProductIDLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Condition, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Conditionlabel, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.CostLabel, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox3, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ProductIDTextBox, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ConditionTextBox, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.CostTextBox, 5, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -581,16 +583,16 @@
             this.ProductIDLabel.TabIndex = 0;
             this.ProductIDLabel.Text = "ProductID";
             // 
-            // Condition
+            // Conditionlabel
             // 
-            this.Condition.AutoSize = true;
-            this.Condition.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Condition.Location = new System.Drawing.Point(163, 0);
-            this.Condition.Name = "Condition";
-            this.Condition.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.Condition.Size = new System.Drawing.Size(60, 18);
-            this.Condition.TabIndex = 1;
-            this.Condition.Text = "Condition";
+            this.Conditionlabel.AutoSize = true;
+            this.Conditionlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Conditionlabel.Location = new System.Drawing.Point(163, 0);
+            this.Conditionlabel.Name = "Conditionlabel";
+            this.Conditionlabel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.Conditionlabel.Size = new System.Drawing.Size(60, 18);
+            this.Conditionlabel.TabIndex = 1;
+            this.Conditionlabel.Text = "Condition";
             // 
             // CostLabel
             // 
@@ -603,29 +605,29 @@
             this.CostLabel.TabIndex = 2;
             this.CostLabel.Text = "Cost";
             // 
-            // textBox1
+            // ProductIDTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(83, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(74, 20);
-            this.textBox1.TabIndex = 3;
+            this.ProductIDTextBox.Location = new System.Drawing.Point(83, 3);
+            this.ProductIDTextBox.Name = "ProductIDTextBox";
+            this.ProductIDTextBox.ReadOnly = true;
+            this.ProductIDTextBox.Size = new System.Drawing.Size(74, 20);
+            this.ProductIDTextBox.TabIndex = 3;
             // 
-            // textBox2
+            // ConditionTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(243, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(74, 20);
-            this.textBox2.TabIndex = 4;
+            this.ConditionTextBox.Location = new System.Drawing.Point(243, 3);
+            this.ConditionTextBox.Name = "ConditionTextBox";
+            this.ConditionTextBox.ReadOnly = true;
+            this.ConditionTextBox.Size = new System.Drawing.Size(74, 20);
+            this.ConditionTextBox.TabIndex = 4;
             // 
-            // textBox3
+            // CostTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(403, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(197, 20);
-            this.textBox3.TabIndex = 5;
+            this.CostTextBox.Location = new System.Drawing.Point(403, 3);
+            this.CostTextBox.Name = "CostTextBox";
+            this.CostTextBox.ReadOnly = true;
+            this.CostTextBox.Size = new System.Drawing.Size(197, 20);
+            this.CostTextBox.TabIndex = 5;
             // 
             // ProductInfoForm
             // 
@@ -641,6 +643,7 @@
             this.Name = "ProductInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product Info Form";
+            this.Load += new System.EventHandler(this.ProductInfoForm_Load);
             this.ProductInfoMenuBar.ResumeLayout(false);
             this.ProductInfoMenuBar.PerformLayout();
             this.MainTableLayoutPanel.ResumeLayout(false);
@@ -706,10 +709,10 @@
         private System.Windows.Forms.Label buttonInstructionLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label ProductIDLabel;
-        private System.Windows.Forms.Label Condition;
+        private System.Windows.Forms.Label Conditionlabel;
         private System.Windows.Forms.Label CostLabel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox ProductIDTextBox;
+        private System.Windows.Forms.TextBox ConditionTextBox;
+        private System.Windows.Forms.TextBox CostTextBox;
     }
 }

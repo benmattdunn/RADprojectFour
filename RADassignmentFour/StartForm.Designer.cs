@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartForm));
             this.StartLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CenterLogoPicture = new System.Windows.Forms.PictureBox();
             this.WelcomLabel = new System.Windows.Forms.Label();
@@ -94,6 +95,7 @@
             this.OpenSavedOrderButton.TabIndex = 2;
             this.OpenSavedOrderButton.Text = "Open Saved Order";
             this.OpenSavedOrderButton.UseVisualStyleBackColor = true;
+            this.OpenSavedOrderButton.Click += new System.EventHandler(this.OpenSavedOrderButton_Click);
             // 
             // Exitbutton
             // 
@@ -112,9 +114,11 @@
             this.ClientSize = new System.Drawing.Size(234, 312);
             this.ControlBox = false;
             this.Controls.Add(this.StartLayoutPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StartForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dollar Computers";
             this.StartLayoutPanel.ResumeLayout(false);
             this.StartLayoutPanel.PerformLayout();

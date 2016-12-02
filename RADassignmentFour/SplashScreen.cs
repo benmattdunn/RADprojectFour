@@ -8,7 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/// Dollar computers for RAD assignment 4 
+/// created by Ben Dunn 100098171
+/// Date Decemeber 2, 2016 (final build)
+/// 
+/// notes on program page. 
 namespace RADassignmentFour
 {
     public partial class SplashScreen : Form

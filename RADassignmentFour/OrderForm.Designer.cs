@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderForm));
             this.OrderFormMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,9 +49,16 @@
             this.ManufacturerTextBox = new System.Windows.Forms.TextBox();
             this.PlatFormTextBox = new System.Windows.Forms.TextBox();
             this.ModelTextBox = new System.Windows.Forms.TextBox();
+            this.InfoRichTextBox = new System.Windows.Forms.RichTextBox();
             this.RightSideTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.PriceGroupBox = new System.Windows.Forms.GroupBox();
             this.YourPriveTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.PriceLlabel = new System.Windows.Forms.Label();
+            this.SalesTaxLabel = new System.Windows.Forms.Label();
+            this.TotalLabel = new System.Windows.Forms.Label();
+            this.PriceTextBox = new System.Windows.Forms.TextBox();
+            this.SalesTaxTextBox = new System.Windows.Forms.TextBox();
+            this.TotalTextBox = new System.Windows.Forms.TextBox();
             this.ProductPictureBox = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.BackButton = new System.Windows.Forms.Button();
@@ -63,6 +71,7 @@
             this.UpperLeftTableLayoutPanel.SuspendLayout();
             this.RightSideTableLayoutPanel.SuspendLayout();
             this.PriceGroupBox.SuspendLayout();
+            this.YourPriveTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
@@ -91,13 +100,13 @@
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.printToolStripMenuItem.Text = "Print";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.Exit_Event);
             // 
@@ -112,7 +121,7 @@
             // backToolStripMenuItem
             // 
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
-            this.backToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.backToolStripMenuItem.Text = "Back";
             this.backToolStripMenuItem.Click += new System.EventHandler(this.back_Event);
             // 
@@ -159,6 +168,7 @@
             this.LeftTableLayoutPanel.ColumnCount = 1;
             this.LeftTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.LeftTableLayoutPanel.Controls.Add(this.UpperLeftTableLayoutPanel, 0, 0);
+            this.LeftTableLayoutPanel.Controls.Add(this.InfoRichTextBox, 0, 1);
             this.LeftTableLayoutPanel.Location = new System.Drawing.Point(8, 19);
             this.LeftTableLayoutPanel.Name = "LeftTableLayoutPanel";
             this.LeftTableLayoutPanel.RowCount = 2;
@@ -234,6 +244,7 @@
             // 
             this.ConditionTextBox.Location = new System.Drawing.Point(83, 3);
             this.ConditionTextBox.Name = "ConditionTextBox";
+            this.ConditionTextBox.ReadOnly = true;
             this.ConditionTextBox.Size = new System.Drawing.Size(78, 20);
             this.ConditionTextBox.TabIndex = 4;
             // 
@@ -241,6 +252,7 @@
             // 
             this.ManufacturerTextBox.Location = new System.Drawing.Point(83, 36);
             this.ManufacturerTextBox.Name = "ManufacturerTextBox";
+            this.ManufacturerTextBox.ReadOnly = true;
             this.ManufacturerTextBox.Size = new System.Drawing.Size(78, 20);
             this.ManufacturerTextBox.TabIndex = 5;
             // 
@@ -248,6 +260,7 @@
             // 
             this.PlatFormTextBox.Location = new System.Drawing.Point(227, 3);
             this.PlatFormTextBox.Name = "PlatFormTextBox";
+            this.PlatFormTextBox.ReadOnly = true;
             this.PlatFormTextBox.Size = new System.Drawing.Size(78, 20);
             this.PlatFormTextBox.TabIndex = 6;
             // 
@@ -255,8 +268,18 @@
             // 
             this.ModelTextBox.Location = new System.Drawing.Point(227, 36);
             this.ModelTextBox.Name = "ModelTextBox";
+            this.ModelTextBox.ReadOnly = true;
             this.ModelTextBox.Size = new System.Drawing.Size(78, 20);
             this.ModelTextBox.TabIndex = 7;
+            // 
+            // InfoRichTextBox
+            // 
+            this.InfoRichTextBox.Location = new System.Drawing.Point(3, 77);
+            this.InfoRichTextBox.Name = "InfoRichTextBox";
+            this.InfoRichTextBox.ReadOnly = true;
+            this.InfoRichTextBox.Size = new System.Drawing.Size(308, 216);
+            this.InfoRichTextBox.TabIndex = 1;
+            this.InfoRichTextBox.Text = "";
             // 
             // RightSideTableLayoutPanel
             // 
@@ -289,6 +312,12 @@
             this.YourPriveTableLayoutPanel.ColumnCount = 2;
             this.YourPriveTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.YourPriveTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.YourPriveTableLayoutPanel.Controls.Add(this.PriceLlabel, 0, 0);
+            this.YourPriveTableLayoutPanel.Controls.Add(this.SalesTaxLabel, 0, 1);
+            this.YourPriveTableLayoutPanel.Controls.Add(this.TotalLabel, 0, 2);
+            this.YourPriveTableLayoutPanel.Controls.Add(this.PriceTextBox, 1, 0);
+            this.YourPriveTableLayoutPanel.Controls.Add(this.SalesTaxTextBox, 1, 1);
+            this.YourPriveTableLayoutPanel.Controls.Add(this.TotalTextBox, 1, 2);
             this.YourPriveTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
             this.YourPriveTableLayoutPanel.Name = "YourPriveTableLayoutPanel";
             this.YourPriveTableLayoutPanel.RowCount = 3;
@@ -298,8 +327,61 @@
             this.YourPriveTableLayoutPanel.Size = new System.Drawing.Size(251, 76);
             this.YourPriveTableLayoutPanel.TabIndex = 0;
             // 
+            // PriceLlabel
+            // 
+            this.PriceLlabel.AutoSize = true;
+            this.PriceLlabel.Location = new System.Drawing.Point(3, 0);
+            this.PriceLlabel.Name = "PriceLlabel";
+            this.PriceLlabel.Size = new System.Drawing.Size(31, 13);
+            this.PriceLlabel.TabIndex = 0;
+            this.PriceLlabel.Text = "Price";
+            // 
+            // SalesTaxLabel
+            // 
+            this.SalesTaxLabel.AutoSize = true;
+            this.SalesTaxLabel.Location = new System.Drawing.Point(3, 25);
+            this.SalesTaxLabel.Name = "SalesTaxLabel";
+            this.SalesTaxLabel.Size = new System.Drawing.Size(86, 13);
+            this.SalesTaxLabel.TabIndex = 1;
+            this.SalesTaxLabel.Text = "Sales Tax (.13%)";
+            // 
+            // TotalLabel
+            // 
+            this.TotalLabel.AutoSize = true;
+            this.TotalLabel.Location = new System.Drawing.Point(3, 50);
+            this.TotalLabel.Name = "TotalLabel";
+            this.TotalLabel.Size = new System.Drawing.Size(34, 13);
+            this.TotalLabel.TabIndex = 2;
+            this.TotalLabel.Text = "Total ";
+            // 
+            // PriceTextBox
+            // 
+            this.PriceTextBox.Location = new System.Drawing.Point(128, 3);
+            this.PriceTextBox.Name = "PriceTextBox";
+            this.PriceTextBox.ReadOnly = true;
+            this.PriceTextBox.Size = new System.Drawing.Size(120, 20);
+            this.PriceTextBox.TabIndex = 3;
+            // 
+            // SalesTaxTextBox
+            // 
+            this.SalesTaxTextBox.Location = new System.Drawing.Point(128, 28);
+            this.SalesTaxTextBox.Name = "SalesTaxTextBox";
+            this.SalesTaxTextBox.ReadOnly = true;
+            this.SalesTaxTextBox.Size = new System.Drawing.Size(120, 20);
+            this.SalesTaxTextBox.TabIndex = 4;
+            // 
+            // TotalTextBox
+            // 
+            this.TotalTextBox.Location = new System.Drawing.Point(128, 53);
+            this.TotalTextBox.Name = "TotalTextBox";
+            this.TotalTextBox.ReadOnly = true;
+            this.TotalTextBox.Size = new System.Drawing.Size(120, 20);
+            this.TotalTextBox.TabIndex = 5;
+            // 
             // ProductPictureBox
             // 
+            this.ProductPictureBox.BackgroundImage = global::RADassignmentFour.Properties.Resources._1;
+            this.ProductPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ProductPictureBox.Location = new System.Drawing.Point(3, 3);
             this.ProductPictureBox.Name = "ProductPictureBox";
             this.ProductPictureBox.Size = new System.Drawing.Size(168, 163);
@@ -360,12 +442,14 @@
             this.ControlBox = false;
             this.Controls.Add(this.MainTableLayout);
             this.Controls.Add(this.OrderFormMenuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.OrderFormMenuStrip;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "OrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrderForm";
+            this.Load += new System.EventHandler(this.OrderForm_Load);
             this.OrderFormMenuStrip.ResumeLayout(false);
             this.OrderFormMenuStrip.PerformLayout();
             this.MainTableLayout.ResumeLayout(false);
@@ -375,6 +459,8 @@
             this.UpperLeftTableLayoutPanel.PerformLayout();
             this.RightSideTableLayoutPanel.ResumeLayout(false);
             this.PriceGroupBox.ResumeLayout(false);
+            this.YourPriveTableLayoutPanel.ResumeLayout(false);
+            this.YourPriveTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -412,5 +498,12 @@
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button Cancelbutton;
         private System.Windows.Forms.Button FinishButton;
+        private System.Windows.Forms.RichTextBox InfoRichTextBox;
+        private System.Windows.Forms.Label PriceLlabel;
+        private System.Windows.Forms.Label SalesTaxLabel;
+        private System.Windows.Forms.Label TotalLabel;
+        private System.Windows.Forms.TextBox PriceTextBox;
+        private System.Windows.Forms.TextBox SalesTaxTextBox;
+        private System.Windows.Forms.TextBox TotalTextBox;
     }
 }
