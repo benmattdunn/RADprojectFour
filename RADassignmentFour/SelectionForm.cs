@@ -91,23 +91,34 @@ namespace RADassignmentFour
             Program.viewProduct = (product)(from products in _db.products
                                             where products.productID == _referenceIntRow
                                             select products).FirstOrDefault();
-            this.SELECTtextBox1.Text = _referenceIntRow.ToString(); 
+            //this.SELECTtextBox1.Text = _referenceIntRow.ToString(); Tester component
 
             //simple bool statement to prevent movement of the object 
             if (_referenceIntRow == -1)
             {
+                this.TitleLabel.Text = "Dollar Computers HardWare List";
                 this.NextButton.Enabled =false;
             }else
             {
-                this.SelectionTextBox.Text = Program.viewProduct.model.ToString() + " Priced at: " + Program.viewProduct.cost.ToString();
+                this.TitleLabel.Text = "Dollar Computers HardWare List: Hitting next will move to purchasing"; //why hide it?
+                this.displayInfo(); //as requested, but in realitiy this would be better as inline code. 
                 this.NextButton.Enabled = true;
             }
 
         }
-
+        /// <summary>
+        /// calls the dispose methods from the main program. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Program.endProgram();
+        }
+
+        private void displayInfo()
+        {
+            this.SelectionTextBox.Text = Program.viewProduct.model.ToString() + " Priced at: " + Program.viewProduct.cost.ToString();
         }
     }
 }

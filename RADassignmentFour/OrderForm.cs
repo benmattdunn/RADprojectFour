@@ -8,6 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+/// Dollar computers for RAD assignment 4 
+/// created by Ben Dunn 100098171
+/// Date Decemeber 2, 2016 (final build)
+/// 
+/// notes on program page. 
 namespace RADassignmentFour
 {
     public partial class OrderForm : Form
@@ -52,14 +58,29 @@ namespace RADassignmentFour
         }
 
 
-
+        /// <summary>
+        /// final message click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FinishButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Thank you for placing an order with Dollar Computers \n \n"
                 + "your order should arrive in 7-10 business days.");
+            Program.endProgram(); 
         }
 
-        
+        /// <summary>
+        /// print click event. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("A copy of your order has been sent to a printer");
+        }
+
+
         /// <summary>
         /// On load, call the load display method. 
         /// 
@@ -95,9 +116,7 @@ namespace RADassignmentFour
             this.SalesTaxTextBox.Text = _salesTax.ToString("c2");
             this.TotalTextBox.Text = _TotalPrice.ToString("c2");
 
-
-
-
+            // static displays. 
             this.ConditionTextBox.Text = Program.viewProduct.condition.ToString();
             this.ManufacturerTextBox.Text = Program.viewProduct.manufacturer.ToString();
             this.PlatFormTextBox.Text = Program.viewProduct.platform.ToString();
@@ -121,12 +140,15 @@ namespace RADassignmentFour
             //sets the image text box, as it uses a short no conversion is nessicary. 
 
             this.ProductPictureBox.BackgroundImage = Program.computerImages[Program.viewProduct.productID-1];
-
-
-
-
-
-
+        }
+        /// <summary>
+        /// shows a message box with about information.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Dollar Computers 1.00 \n Created by Ben Dunn \n 2016", "About");
         }
     }
 }

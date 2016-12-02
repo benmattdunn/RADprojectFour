@@ -631,12 +631,12 @@
             // 
             // ProductInfoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(634, 367);
             this.ControlBox = false;
             this.Controls.Add(this.MainTableLayoutPanel);
             this.Controls.Add(this.ProductInfoMenuBar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.ProductInfoMenuBar;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

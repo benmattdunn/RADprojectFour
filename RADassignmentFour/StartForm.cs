@@ -18,6 +18,9 @@ namespace RADassignmentFour
 {
     public partial class StartForm : Form
     {
+        /// <summary>
+        /// init componsents. 
+        /// </summary>
         public StartForm()
         {
             InitializeComponent();

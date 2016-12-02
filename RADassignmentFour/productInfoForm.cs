@@ -18,6 +18,7 @@ namespace RADassignmentFour
 {
     public partial class ProductInfoForm : Form
     {
+        ///field variables. 
         private SelectionForm _previousForm;
         /// <summary>
         /// passing in the product just forces this constuctor to creat the
@@ -45,7 +46,11 @@ namespace RADassignmentFour
         }
 
 
-
+        /// <summary>
+        /// brings up the next form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NextButton_Click(object sender, EventArgs e)
         {
             OrderForm orderForm = new OrderForm(this);
@@ -54,7 +59,11 @@ namespace RADassignmentFour
         }
 
 
-
+        /// <summary>
+        /// brings the previous form back into display. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Back_Event(object sender, EventArgs e)
         {
             this._previousForm.Show();
@@ -62,7 +71,11 @@ namespace RADassignmentFour
         }
 
 
-
+        /// <summary>
+        /// calls the exit event. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Exit_Event(object sender, EventArgs e)
         {
             Program.endProgram();
@@ -71,15 +84,19 @@ namespace RADassignmentFour
 
         /// <summary>
         /// on load, move the static values of the program object into the values of
-        /// 
+        /// the form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ProductInfoForm_Load(object sender, EventArgs e)
         {
-
+            loadIntoForm(Program.viewProduct);
         }
 
+        /// <summary>
+        /// actually does the real load, 
+        /// </summary>
+        /// <param name="prod"></param>
         private void loadIntoForm(product prod)
         {
             this.ProductIDTextBox.Text = Program.viewProduct.productID.ToString();
@@ -123,7 +140,7 @@ namespace RADassignmentFour
 
 
         /// <summary>
-        /// Read event. 
+        /// Read event, included in lower section due to code level.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -167,7 +184,7 @@ namespace RADassignmentFour
         }
 
         /// <summary>
-        /// save event
+        /// save event, writes to a bin file for security. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

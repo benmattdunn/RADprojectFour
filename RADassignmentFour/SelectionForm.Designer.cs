@@ -72,7 +72,6 @@
             this.dollarComputersDataSet = new RADassignmentFour.DollarComputersDataSet();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.productsTableAdapter = new RADassignmentFour.DollarComputersDataSetTableAdapters.productsTableAdapter();
-            this.SELECTtextBox1 = new System.Windows.Forms.TextBox();
             this.SelectMainTableLayoutPanel.SuspendLayout();
             this.SelectionTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductDataGridView)).BeginInit();
@@ -449,21 +448,14 @@
             // 
             this.productsTableAdapter.ClearBeforeFill = true;
             // 
-            // SELECTtextBox1
-            // 
-            this.SELECTtextBox1.Location = new System.Drawing.Point(576, 466);
-            this.SELECTtextBox1.Name = "SELECTtextBox1";
-            this.SELECTtextBox1.Size = new System.Drawing.Size(100, 20);
-            this.SELECTtextBox1.TabIndex = 1;
-            // 
             // SelectionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(910, 484);
             this.ControlBox = false;
-            this.Controls.Add(this.SELECTtextBox1);
             this.Controls.Add(this.SelectMainTableLayoutPanel);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SelectionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -477,7 +469,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dollarComputersDataSet)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -525,6 +516,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mousttypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn powerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn webcamDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox SELECTtextBox1;
     }
 }

@@ -61,6 +61,9 @@
             // 
             // CenterLogoPicture
             // 
+            this.CenterLogoPicture.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.CenterLogoPicture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CenterLogoPicture.BackgroundImage")));
+            this.CenterLogoPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CenterLogoPicture.Location = new System.Drawing.Point(3, 33);
             this.CenterLogoPicture.Name = "CenterLogoPicture";
             this.CenterLogoPicture.Size = new System.Drawing.Size(203, 173);
@@ -109,11 +112,11 @@
             // 
             // StartForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(234, 312);
             this.ControlBox = false;
             this.Controls.Add(this.StartLayoutPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

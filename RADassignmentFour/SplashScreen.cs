@@ -17,11 +17,21 @@ namespace RADassignmentFour
 {
     public partial class SplashScreen : Form
     {
+        /// <summary>
+        /// int components. 
+        /// </summary>
         public SplashScreen()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// timer event, calls after 3 seconds to boot up the rest of the 
+        /// program, disposes of the timer and hides the splash screen (does not
+        /// dispose) as it's the main entry point reference. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             StartForm startForm = new StartForm();
